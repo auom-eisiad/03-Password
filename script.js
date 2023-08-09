@@ -14,8 +14,8 @@
 
 // genPassword();
 
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
+//WHEN I click the button to generate a password
+//THEN I am presented with a series of prompts for password criteria
 
 
 // WHEN prompted for password criteria
@@ -63,7 +63,9 @@ var specialChar = window.confirm("Is there any special characters?")
 // THEN my input should be validated and at least one character type should be selected
 
 function genPassword() {
-    if ()
+    if (fdf) {
+
+    }
 }
 
 // WHEN all prompts are answered
