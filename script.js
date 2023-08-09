@@ -14,7 +14,6 @@
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
 
-var length = window.prompt("Please enter the length of your password (need to be 8 and no more than 128 characters.)");
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
@@ -24,12 +23,24 @@ var length = window.prompt("Please enter the length of your password (need to be
 
 //make sure user only put at least 8 characters and no more than 128 characters.
 // the prompt will error if variable length is less than 8 characters or greater than 128.
-if ( parseInt(length)) {
-    var lengthInt = parseInt(length);
-    if (lengthInt < 8 || lengthInt > 128) {
-        window.alert("Password must be between 8 to 128 characters.");
+
+function validateLength() {
+    var length = window.prompt("Please enter the length of your password (need to be 8 and no more than 128 characters.)");
+    
+    if ( parseInt(length)) {
+        var lengthInt = parseInt(length);
+        if (lengthInt < 8 || lengthInt > 128) {
+            window.alert("Password must be between 8 to 128 characters.");
+            validateLength();
+        }
+    }
+    else {
+        window.alert("Password length must be a number");
+        validateLength();
     }
 }
+
+validateLength();
 
 // WHEN asked for character types to include in the password
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
