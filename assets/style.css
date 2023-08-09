@@ -1,9 +1,11 @@
+/* the global selector that controls the elements to all look the same no matter what browser */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* controls the document, body, and class wrapper to stick to a certain height with no margin or padding */
 html,
 body,
 .wrapper {
@@ -12,17 +14,20 @@ body,
   padding: 0;
 }
 
+/* give the body a font and background color */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
 
+/* give the class wrapper a padding */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/* give ther header in the wrapper some style */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +35,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* style the class card */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -42,6 +48,7 @@ header {
   padding: 30px 40px;
 }
 
+/* style after the class card-header to give spacing from the class card-body */
 .card-header::after {
   content: " ";
   display: block;
@@ -50,14 +57,17 @@ header {
   height: 2px;
 }
 
+/* give the class card-body a mininum height */
 .card-body {
   min-height: 100px;
 }
 
+/* center the class card-footer so the button is centered */
 .card-footer {
   text-align: center;
 }
 
+/* style before the card-footer to give spacing from the button */
 .card-footer::before {
   content: " ";
   display: block;
@@ -66,12 +76,14 @@ header {
   height: 2px;
 }
 
+/* style after the card-footer to give spacing between the button and the bottom of the card */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* style the button to stand out */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -88,15 +100,18 @@ header {
   cursor: pointer;
 }
 
+/* disable the button if it is not activated */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
 
+/* make class float-right to float on the right but there is no class in html */
 .float-right {
   float: right;
 }
 
+/* style the id password */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +133,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* the media query to make sure the button and id password looks clean on other browsers */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
