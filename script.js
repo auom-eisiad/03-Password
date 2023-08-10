@@ -1,22 +1,12 @@
 //Assignment code here
+// hold the lengthInt for global use
+var lengthInt;
 
 // User click on button
 function generatePassword() {
-    // Password Criteria
-    // 2. Lowercase?
-    // 3. Uppercase?
-    // 4. Numeric?
-    // 5. Special characters?
 
     //funtion to validate the length of the password
     function validateLength() {
-        var password = "";
-        for (var i = 0; i <= lengthInt; i++) {
-            var randomNumber = Math.floor(Math.random() * input.length);
-            password += password + input[randomNumber];
-
-            return password;
-            }
 
         // prompt user to choose how long they want their password
         var length = window.prompt("Please enter the length of your password: (No less than 8 and no more than 128 characters.)");
@@ -48,24 +38,41 @@ function generatePassword() {
     // call function
     validateLength();
 
-    var input = [];
+    // hold user choices and ask which the user want to validate
+    var input;
+    var inputLower = window.confirm("Is there any lowercase?");
+    var inputUpper = window.confirm("Is there any uppercase?")
+    var inputNum = window.confirm("Is there any numeric?")
+    var inputSpC = window.confirm("Is there any special characters?")
+    
+    // hold the characters user can use
     var lowerAlp = "abcdefghijklmnopqrstuvwxyz".split( '' );
     var upperAlp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split( '' );
     var num = "0123456789".split( '' );
     var spcha = "!@#$%^&*()".split( '' );
 
-    if (confirm("Is there any lowercase?")) {
-        input = input.concat(lowerAlp);
+    // validate their criteria
+    if (inputLower && inputUpper && inputNum && inputSpC) {
+        input = lowerAlp.concat(upperAlp, num, spcha);
     }
-    if (confirm("Is there any uppercase?")) {
-        input = input.concat(upperAlp);
+    if (inputLower && !inputUpper && !inputNum && !inputSpC) {
+        input = lowerAlp;
     }
-    if (confirm("Is there any numeric?")) {
-        input = input.concat(num);
+    if (inputLower && inputUpper && !inputNum && !inputSpC) {
+        input = lowerAlp.concat(upperAlp);
     }
-    if (confirm("Is there any special characters?")) {
-        input = input.concat(spcha);
-    }
+    else if (inputLower && inputUpper && inputNum && !inputSpC) {
+        input = lowerAlp.concat(upperAlp, num);
+    };
+
+    //hold the password to generate and display
+    var password = "";
+
+    // randomly choose characters to generate
+    for (var i = 0; i <= lengthInt; i++) {
+        var randomNumber = Math.floor(Math.random() * input.length);
+        password.push(randomNumber);
+        }
 }
 
 // Get references to the #generate element
