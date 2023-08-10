@@ -17,7 +17,7 @@ N/A
 
 ## Usage
 
-Website:
+Website: https://auom-eisiad.github.io/03-Password/
 ![Website](assets/images/website.png)
 
 When the user enters the browser, they will see a red button titled "Generate". Once clicked, a popup will display at the top asking the user how long they want their password to be. The prompt will have criteria it must meet and if the user does not follow them, the prompt will alert them the error until they meet the criteria. Once the user has selected what they want for their password, the generator will validate them and generte the password into the text box for the user to use.
