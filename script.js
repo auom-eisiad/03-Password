@@ -3,13 +3,21 @@
 // User click on button
 function generatePassword() {
     // Password Criteria
-    // 1. Length of 8 - 128 characters no more
     // 2. Lowercase?
     // 3. Uppercase?
     // 4. Numeric?
     // 5. Special characters?
+
     //funtion to validate the length of the password
     function validateLength() {
+        var password = "";
+        for (var i = 0; i <= lengthInt; i++) {
+            var randomNumber = Math.floor(Math.random() * input.length);
+            password += password + input[randomNumber];
+
+            return password;
+            }
+
         // prompt user to choose how long they want their password
         var length = window.prompt("Please enter the length of your password: (No less than 8 and no more than 128 characters.)");
         
@@ -36,11 +44,28 @@ function generatePassword() {
             validateLength();
         }
     }
+
+    // call function
     validateLength();
 
-    console.log("cicked");
+    var input = [];
+    var lowerAlp = "abcdefghijklmnopqrstuvwxyz".split( '' );
+    var upperAlp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split( '' );
+    var num = "0123456789".split( '' );
+    var spcha = "!@#$%^&*()".split( '' );
 
-    return "Hi";
+    if (confirm("Is there any lowercase?")) {
+        input = input.concat(lowerAlp);
+    }
+    if (confirm("Is there any uppercase?")) {
+        input = input.concat(upperAlp);
+    }
+    if (confirm("Is there any numeric?")) {
+        input = input.concat(num);
+    }
+    if (confirm("Is there any special characters?")) {
+        input = input.concat(spcha);
+    }
 }
 
 // Get references to the #generate element
